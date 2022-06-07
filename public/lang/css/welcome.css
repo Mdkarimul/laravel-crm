@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+body{
+   
+}
+.welcome-image{
+    background-image: url('../../assets/images/welcome.jpg');
+    background-size: cover;
+}
+.branding {
+    text-align: center;
+}
+
+.branding h1 , .branding p,.welcome-form label{
+    font-family: 'Mukta', sans-serif;
+}
+.welcome-form label{
+    font-size:15px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.branding h1{
+    font-weight: bold;
+    font-size: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.branding p{
+    font-weight:normal;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    color:#848484;
+}
+
+.welcome-form-input {
+    padding-left:0px;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    font-size: 12px;
+    font-family: 'Mukta', sans-serif;
+    text-transform: lowercase;
+}
+
+.welcome-form-input:focus {
+    box-shadow: none!important;
+}
+
+.next-btn:hover,.back-btn:hover {
+color:#848484;
+}
+
+.submit-btn {
+    background-color: #fc6201;
+    color:white;
+}
+
+.submit-btn:hover {
+    color:white;
+}
+

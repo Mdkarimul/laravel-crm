@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.create-team-icon {
+    font-size:60px;
+    position:absolute;
+    right: 50px;
+    bottom: 50px;
+    color: #fc007a;
+    cursor: pointer;
+    z-index: 120000;
+}
+
+.page-link:focus{
+ box-shadow: none!important;
+ background-color: #ccc;
+}
+
+.edit-job-role{
+    cursor: pointer;
+}
+
+#add-employee,#job-role {
+    position:absolute;
+    z-index:1200;
+    background-color:gray;
+}
+
+
+.agree-checkbox
+{
+    width:auto!important;
+    height:auto!important;
+    font-size:10px!important;
+}
+
+.add-employee-message{
+    position:absolute;
+    top :40px;
+    left: 35mm;
+   z-index:199;
+}
+
+
+

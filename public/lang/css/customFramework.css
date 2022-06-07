@@ -1,0 +1,253 @@
+
+/* start font*/
+.quicksand-font {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+
+.quicksand-font-s {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+
+.quicksand-font-m {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+
+input ,select{
+    width: 100%;
+    height:31px!important;
+    font-size:14px!important;
+    padding: 1px 1px 1px 3px!important;
+    font-family: 'Quicksand', sans-serif;
+}
+
+textarea {
+    font-family: 'Quicksand', sans-serif;
+    font-size:12px!important;
+    padding: 1px 1px 1px 3px!important;
+}
+
+.material-m {
+    font-size: 18px!important;
+    margin:0px 4px;
+}
+
+
+
+
+/* end font */
+
+.remove-focus {
+    box-shadow: none!important;
+    outline: none!important;
+}
+
+/* start bg color */
+.bg-pink {
+    background-color: #fc007a;
+}
+
+.bg-notice {
+    background-color: #f88a65;
+
+}
+.text-notice {
+    color: #cc0967;
+}
+
+.bg-warning {
+    background-color: 	#cc3300;
+}
+
+.erpbg-primary {
+    background-color: #7460EE;
+}
+
+.erpbg-secondary{
+    background-color: #545B62;
+}
+
+.erpbg-success {
+    background-color: #06D79C;
+}
+.erpbg-danger {
+    background-color: #EF5350;
+}
+.erpbg-warning {
+    background-color: #634d24;
+}
+.erpbg-info {
+    background-color: #315683;
+}
+
+.erpbg-light {
+    background-color: #38383f;
+}
+
+.erpbg-dark {
+    background-color: #06364e;
+}
+
+.erpbg-pink {
+    background-color: #9c1355;
+}
+
+.erpbg-navy {
+    background-color: #00092B;
+}
+/* end bg color */
+
+
+
+/* start txt color */
+.bg-pink {
+    color: #fc007a;
+}
+
+.erptxt-primary {
+    color: #7460EE;
+}
+
+.erptxt-secondary{
+    color: #545B62;
+}
+
+.erptxt-success {
+    color: #06D79C;
+}
+.erptxt-danger {
+   color: #EF5350;
+}
+.erptxt-warning {
+    color: #FFF0D5;
+}
+.erptxt-info {
+   color: #D7E8FD;
+}
+
+.erptxt-light {
+    color: #FBFBFc;
+}
+
+.erptxt-dark {
+   color: #D4D6D7;
+}
+
+.erptxt-pink {
+    color: #fc007a;
+}
+
+.erptxt-navy {
+  color: #00092B;
+}
+/* end bg color */
+
+
+/* start full page loader  */
+.fullpage-loader{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index:10001;
+    background-color: rgba(0, 0, 0,0.8);
+}
+
+.lds-ripple {
+    position: relative;
+    top:50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    transform: translate(-50%,-50%);
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    4.9% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    5% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+
+/* end full page loader*/
+
+
+
+
+
+/*ajax before send loader*/
+.loader{
+    width: 60px;
+    height: 60px;
+    margin: 50px auto;
+    border: 15px solid #3c40c6;
+    border-top: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 25px 2px #3c40c6;
+    position: relative;
+    animation: animate 1s linear infinite normal;
+}
+.loader:before{
+    content: " ";
+    width: 25px;
+    height: 25px;
+    border: 10px solid #3c40c6;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@keyframes animate{
+    0%{
+        opacity: 0.2;
+        transform: rotate(0deg);
+    }
+    50%{
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+    100%{
+        opacity: 0.2;
+        transform: rotate(360deg);
+    }
+}
+/*end ajax before send loader*/
