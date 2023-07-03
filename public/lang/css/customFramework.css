@@ -2,7 +2,7 @@
 /* start font*/
 .quicksand-font {
     font-family: 'Quicksand', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .quicksand-font-s {
@@ -46,7 +46,7 @@ textarea {
 
 /* start bg color */
 .bg-pink {
-    background-color: #fc007a;
+    background-color:#00092B;;
 }
 
 .bg-notice {

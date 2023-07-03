@@ -9,10 +9,9 @@ $(document).ready(function(){
      company_slug : company_slug,
      company_estd : company_estd,
      company_password : company_password
-    }
+    };
    query =  JSON.stringify(query);
   query =  btoa(query);
-    alert();
     $.ajax({
         type : "PUT",
         url : "/api/company/"+query,
@@ -20,12 +19,12 @@ $(document).ready(function(){
             _token : $("body").attr("token")
         },
         success : function(response){
-      console.log(response);
-      window.location = "/admin";
+           window.location = "/admin";
         },
         error : function(xhr,error,response)
         {
-       console.log(response);
+        const error_res = JSON.parse(xhr.responseText);
+        alert(error_res.notice);
         }
     });
     });

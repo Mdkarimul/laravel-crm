@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,18 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//company registration page view
 Route::get('/', function () {
     return view('welcome');
 });
 
+//congrats page view 
 Route::get("/congrats",function(){
     return view("congrats");
 });
 
+//not found page view
 Route::get("/404",function(){
     return view("notfound");
 });
 
+//user email route match this query string url that was send during company registration
 Route::get("/{query}/{string}",function($query,$string){
     if($query =="erp")
     {
@@ -39,7 +44,6 @@ Route::get("/{query}/{string}",function($query,$string){
 });
 
 /* Start admin panel routing */
-
 Route::get("/admin",function(){
     return view('adminpanelView.teamDesign');
 });

@@ -1,14 +1,16 @@
 @charset "UTF-8";
 
 .create-team-icon {
-    font-size:60px;
+    font-size:40px;
     position:absolute;
     right: 50px;
     bottom: 50px;
-    color: #fc007a;
+    color:#00092B;
     cursor: pointer;
     z-index: 120000;
 }
+
+
 
 .page-link:focus{
  box-shadow: none!important;

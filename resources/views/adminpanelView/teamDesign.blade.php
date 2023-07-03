@@ -22,25 +22,24 @@ WES-TeamDesign
 @endsection
 
 @section("content")
+
+<!--create team button-->
 <a href="#createTeamModal" data-toggle="modal">
 <span class="material-icons create-team-icon" style="font-size:;">add_circle</span>
 </a>
+<!--End team button-->
+
+
 <!-- start create team modal-->
-<!-- The Modal -->
 <div class="modal fade shadow-lg" id="createTeamModal">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content border-0">
-      
-        <!-- Modal Header -->
         <div class="modal-header bg-pink text-white">
           <h4 class="modal-title quicksand-font font-weight-bold ">Create Team</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        
-        <!-- Modal body -->
         <div class="modal-body quicksand-font" style="letter-spacing:1px;">
           Manage your employees group by creating a team such as service team , backend team and many more !
-        
           <form class="create-team-form">
             @csrf 
         <label class="d-none quicksand-font text-danger float-left duplicate-teamname-icon my-1">
@@ -55,29 +54,28 @@ WES-TeamDesign
         
         <textarea required="required" name="team_description" class="team_description form-control mb-4 remove-focus" rows="3">Describe something about team 
         </textarea>
-
         <button class="btn float-right bg-pink text-white remove-focus">Create</button>
     </form>
-        
         </div>
       </div>
     </div>
   </div>
 <!--end create team modal-->
-<!--add job role AND add employee-->
-<div class="row">
-  <!--start 1st col md 6-->
-  <div class="col-md-6">
 
+
+
+<!--add job role AND add employee-->
+<div class="row p-0 m-0">
+  <!--start 1st col md 6-->
+  <div class="col-md-6 p-0 m-0">
   <!--start add job role card-->
-  <div class="card rounded-0  mt-2 border-0 " style="">
-  <div class="card-body m-0  p-2 ">
+  <div class="card rounded-0   border-0 " style="border:1px solid red;">
+  <div class="card-body m-0">
     <p class="quicksand-font p-0 m-0 mb-2">Setup job role and salary for employees</p>
-    <button data-target="#job-role" data-toggle="collapse" class="rounded-0 quicksand-font remove-focus btn bg-pink px-2 text-white d-flex align-items-center">
-    <span class="material-icons" style="">post_add</span>
+    <button data-target="#job-role" data-toggle="collapse" class="rounded-1 quicksand-font remove-focus btn bg-pink px-2 text-white d-flex align-items-center">
+    <span class="material-icons" style="font-size:12px;">post_add</span>
     Add Role
     </button>
-    
 <div class="job-role mt-4 collapse p-2 " id="job-role">
   <form class="job-role-form">
     @csrf 
@@ -104,15 +102,16 @@ WES-TeamDesign
  <!--end add job role card-->
   </div>
  <!--end 1st col md 6-->
+
   <!--start 2st col md 6-->
-  <div class="col-md-6">
+  <div class="col-md-6 p-0 m-0">
     <!--start add job role card-->
-  <div class="card rounded-0  mt-2 border-0 " style="">
-  <div class="card-body m-0  p-2 ">
+  <div class="card rounded-0   border-0 " style="">
+  <div class="card-body m-0  ">
     <p class="quicksand-font p-0 m-0 mb-2">Setup job role and salary for employees</p>
     <div class="add-employee-message"></div>
-    <button data-target="#add-employee" data-toggle="collapse" class="rounded-0 quicksand-font remove-focus btn erpbg-primary px-2 text-white d-flex align-items-center">
-    <span class="material-icons" style="">group_add</span>
+    <button data-target="#add-employee" data-toggle="collapse" class="rounded-1 quicksand-font remove-focus btn erpbg-primary px-2 text-white d-flex align-items-center">
+    <span class="material-icons" style="font-size:12px;">group_add</span>
     Add Employee
     </button>
     
@@ -134,7 +133,7 @@ WES-TeamDesign
     </div>
 
     <div class="row px-3">
-    <div class="col-md-6 px-0">
+    <div class="col-md-6 p-0 m-0">
     <div class="form-group my-3">
       <label class="quicksand-font">Residential proof</label>
       <input type="file" name="residential_proof" accept="image/*" required class="form-control remove-focus rounded-0">
@@ -165,100 +164,74 @@ WES-TeamDesign
       <input type="text" name="city" required class="form-control remove-focus rounded-0">
     </div>
 
-
     <div class="form-group my-3">
       <label class="quicksand-font">State</label>
       <input type="text" name="state" required class="form-control remove-focus rounded-0">
     </div>
-
-
-
     </div>
-
-    <div class="col-md-6 pr-0">
+    <div class="col-md-6 p-0 m-0">
     <div class="form-group my-3">
       <label class="quicksand-font">Qualification proof</label>
       <input type="file" name="qualification_proof" accept="image/*" required class="form-control remove-focus rounded-0">
     </div>
-
     <div class="form-group my-3">
       <label class="quicksand-font">Primary contact</label>
       <input type="number" name="primary_contact" required class="form-control remove-focus rounded-0">
     </div>
-
     <div class="form-group my-3">
       <label class="quicksand-font">Date of birth</label>
       <input type="date" name="dob" required class="form-control  remove-focus rounded-0">
     </div>
-
-
     <div class="form-group mt-3 mb-0">
       <label class="quicksand-font">Street address</label>
       <textarea  name="street_address" required class="form-control remove-focus rounded-0"></textarea>
     </div>
-
     <div class="form-group mb-3 mt-0 ">
       <label class="quicksand-font">Pincode</label>
       <input type="number" name="pin_code" required class="form-control remove-focus rounded-0">
     </div>
-
-
     <div class="form-group my-3">
       <label class="quicksand-font">Country</label>
       <input type="text" name="country" required class="form-control remove-focus rounded-0">
     </div>
-
-  
     </div>
-
 <div class="col-md-12 p-0">
 <div class="form-group mb-3">
   <input type="checkbox" name="agree" class="rounded-0 agree-checkbox" id="agree-checkbox" data-target="#agree-form" data-toggle="collapse">
   <label class="quicksand-font" for="agree-checkbox">Have you worked any where before</label>
 </div>
 </div>
-
     </div>
 
 
-    <!--new row-->
-    <div class="row px-3 collapse " id="agree-form">
+    <!--add employ with experiences-->
+    <div class="row px-3 collapse" id="agree-form">
       <div class="col-md-6 px-0">
         <div class="form-group my-2">
           <label class="quicksand-font">Company name</label>
             <input type="text" name="company_name" class="form-control rounded-0 remove-focus">
         </div>
       </div>
-
       <div class="col-md-6 pr-0 ">
       <div class="form-group my-2">
           <label class="quicksand-font">Experience</label>
             <input type="number" name="experience" class="form-control rounded-0 remove-focus">
         </div>
       </div>
-
-
       <div class="col-md-6 px-0">
         <div class="form-group my-2">
           <label class="quicksand-font">Salary</label>
             <input type="number" name="previous_salary" class="form-control rounded-0 remove-focus">
         </div>
       </div>
-
       <div class="col-md-6 pr-0">
       <div class="form-group my-2">
           <label class="quicksand-font">4 Copies of salary sleep</label>
             <input type="file" name="salary_sleep" accept="image/*" class="form-control rounded-0 remove-focus">
         </div>
       </div>
-
-
-
     </div>
-   
-   
     <button type="submit" role="insert" class="edit-job-role-submit-btn btn remove-focus rounded-0  bg-success text-white quicksand-font" >Register</button>
-  
   </form>
 </div>
   </div>
@@ -271,9 +244,9 @@ WES-TeamDesign
 
 
 
-   <div class="row pt-1">
-     <div class="col-md-6" >
-       <div class="card border-0 rounded-0 shadow-sm mb-4">
+   <div class="row p-0 m-0" >
+     <div class="col-md-6 p-0 m-0" >
+       <div class="card border-0 rounded-0 shadow-sm">
          <div class="card-body">
          <h5 class="quicksand-font font-weight-bold d-flex justify-content-between">
            Teams
@@ -286,15 +259,13 @@ WES-TeamDesign
          <div class="teams-area"></div>
          <div class="teams-pagination">
         <div class="paginate-sm-btn"></div>
-
     </div>
    </div>
     </div>
- 
      </div>
-     <div class="col-md-6 p-0 m-0 " >
-                
-     <div class="card border-0 rounded-0 shadow-sm mb-4">
+
+     <div class="col-md-6 p-0 m-0" >       
+     <div class="card border-0 rounded-0 shadow-sm">
          <div class="card-body">
          <h5 class="quicksand-font font-weight-bold mb-2 d-flex justify-content-between">
            Job roles 

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\restApi;
-
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Company_registration;
@@ -44,17 +44,19 @@ class company extends Controller
      */
     public function store(Request $request)
     {
+        $mac = new macAddress();
+        $request["admin_mac_address"] = $mac->data[1];
         $this->data = $request->all();
-      $this->generate_password =   $this->data['password'];
-      $this->password =  array("password"=>"wap1234"); //>md5($this->data['password']
-     $this->data =  array_replace($this->data,$this->password);
+      $this->generate_password =   md5($this->data['password']);
+      $this->password =  array("password"=>$this->generate_password); //>md5($this->data['password']
+      // pc mac address print_r($mac->data[1]);
+      $this->data =  array_replace($this->data,$this->password);
         Company_registration::create($this->data);
      //sending erp url and passowrd
-     \Mail::to($this->data['company_email'])->send(new emailVerification(array(
+     Mail::to($this->data['company_email'])->send(new emailVerification(array(
          "erp_url"=>$this->data['erp_url'],
          "password"=>$this->generate_password
      )));
-
 
   //releasing memory
   unset($_POST);
@@ -63,8 +65,7 @@ class company extends Controller
   unset($this->generate_password);
   unset($this->password);
       return redirect("/congrats");
-      exit;
-        //return response()->view("congrats",array("notice"=>"Please check your email !"))->header("Content-Type","text/html")->setStatusCode(201);
+     return response()->view("congrats",array("notice"=>"Please check your email !"))->header("Content-Type","text/html")->setStatusCode(201);
     }
 
     /**
@@ -78,8 +79,9 @@ class company extends Controller
         //
         $this->mac_address_obj = new macAddress();
         $this->mac_address =   $this->mac_address_obj->__construct();
+        //  echo $this->mac_address;
+        //  return;
         $this->query = json_decode(base64_decode($query));
-
         if($this->query->query =="erp")
         {
             $this->data =   Company_registration::where("company_slug",$this->query->string)->get();
@@ -87,6 +89,7 @@ class company extends Controller
             {
                 if($request->ajax())
                 {
+                    echo "karimul islam";
                     //releasing memory
                     unset($_GET);
                     unset($query);
@@ -95,7 +98,7 @@ class company extends Controller
                     unset($this->data);
                     unset($this->query);
                     unset($this->mac_address_obj);
-                return response(array("notice"=>"Data found !"),200)->header("Content-Type","text/html");
+                 return response(array("notice"=>"Data found !"),200)->header("Content-Type","text/html");
                 }
                 else
                 {    
@@ -149,7 +152,6 @@ class company extends Controller
             return response(array("notice"=>"Data not found !"),404)->header("Content-Type","text/html");
         }
         }
-
         //next validation
     }
 
@@ -177,14 +179,17 @@ class company extends Controller
       $this->mac_address =   $this->mac_address->__construct();
         $this->query =  json_decode(base64_decode($query));
        //register admin pc
+   
        if($this->query->query=="adminRegister")
        {
-           
-      $this->data =   Company_registration::where([
-            ["company_slug",$this->query->company_slug],
-            ["company_estd",$this->query->company_estd],
-            ["password","wap1234"]  
-           ])->update(array(
+  
+        $this->data =   Company_registration::where([
+            ["company_slug",$this->query->company_slug]
+           ])->where([
+            ["company_estd",$this->query->company_estd]
+            ])->where([
+            //   ["password","gmlvx4m@"]
+                ])->update(array(
                "admin_mac_address"=>$this->mac_address,
            ));
            if($this->data)
@@ -194,8 +199,6 @@ class company extends Controller
                 "team-creator" => "7mdkarimul@gmail.com",
                  "team-creator-role"=>"admin"
                );
-             
-     
             return response(array("notice"=>"Admin authenticated !"),200)->header("Content-Type","application/json");
              //releasing memory
              unset($query);

@@ -31,6 +31,7 @@ class Company_registration extends Model
         "whats_app",
         "category",
         "erp_url",
-        "password"
+        "password",
+        "admin_mac_address"
     ];
 }

@@ -13,9 +13,6 @@ $(document).ready(function(){
               var label =  parent.getElementsByTagName("LABEL")[0];
               $(label).removeClass("d-none");
               $(label).addClass("animate__animated animate__backInUp");
-            
-          
-           
         });
     });
 });
@@ -49,8 +46,7 @@ function empty_field_validation(f_class,s_class){
         {
             if(this.nextSibling.nodeName=="SMALL")
             {
-                this.nextSibling.remove();
-                
+                this.nextSibling.remove();   
             }
             $(this).addClass("border-danger");
             $("<small class='text-danger required-notice'><i class='fa fa-warning'></i>This field can't be empty !</small>").insertAfter(this);
@@ -137,7 +133,6 @@ function validate_url(input){
         $(input).addClass("border-danger");
         $("<small class='text-danger required-notice'><i class='fa fa-warning'></i>Enter a valid url !</small>").insertAfter(input);
     }
-    
     }
 
 
@@ -147,7 +142,6 @@ var company_name = $(".company-name").val().trim();
 var company_slug = company_name.replace(/ /g,"");
 var input = document.querySelector(".company-name");
 var erp_url = window.location+"erp/"+company_slug;
-
 $.ajax({
     type:"get",
     url : "/erp/"+company_slug,

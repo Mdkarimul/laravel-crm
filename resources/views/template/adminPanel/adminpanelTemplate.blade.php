@@ -26,31 +26,32 @@
   @yield("custom-js")
   <!--end custom js-->
 </head>
-<body class="bg-light" token="{{ csrf_token() }}">
-    <div class="container-fluid px-0">
-        <div class="sidenav  bg-white p-4">
+<body class="bg-light" token="{{ csrf_token() }}" style="">
+    <div class="container-fluid p-0 m-0" style="">
+        <div class="sidenav  bg-primary" >
             <center>
                 <div class="admin-profile">
-                <span class="material-icons" style="font-size:60px;">
+                <span class="material-icons" style="font-size:40px;">
                account_circle
                </span>
-               <h5 class="quicksand-font">Hi ! admin</h5>
+               <h5 class="quicksand-font hi-admin">Hi ! admin</h5>
+               <hr color="#ddd">
                 </div>
             </center>
-            <div class="admin-menu my-4">
+            <div class="admin-menu">
                 <ul class="navbar-nav">
-                    <li class="d-flex align-items-center mb-4">
-                    <span class="material-icons mr-2" style="font-size:;">group_work</span>
+                    <li class="d-flex align-items-center mb-3">
+                    <span class="material-icons mr-2" style="font-size:14px;">group_work</span>
                         <a href="/teamdesign"  class="quicksand-font">Team Design</a>
                     </li>
 
-                    <li class="d-flex align-items-center mb-4">
-                    <span class="material-icons mr-2" style="font-size:;">badge</span>
+                    <li class="d-flex align-items-center mb-3">
+                    <span class="material-icons mr-2" style="font-size:14px;">badge</span>
                         <a href="/addemployee"  class="quicksand-font">Add Employee</a>
                     </li>
 
-                    <li class="d-flex align-items-center mb-4">
-                    <span class="material-icons mr-2" style="font-size:;">manage_accounts</span>
+                    <li class="d-flex align-items-center mb-3">
+                    <span class="material-icons mr-2" style="font-size:14px;">manage_accounts</span>
                         <a href="/teamdesign"  class="quicksand-font">Team Design</a>
                     </li>
                 </ul>
@@ -60,7 +61,7 @@
 
         <div class="page">
             <!-- start navbar-->
-            <nav class="navbar navbar-expand-lg py-2">
+      <!-- <nav class="navbar navbar-expand-lg py-2">
   <a class="navbar-brand mx-4" href="#">ERP Solutions</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -90,9 +91,9 @@
     </ul>
     
   </div>
-</nav>
+</nav> -->
             <!--end navbar-->
-        <div class="admin-area p-5" style="">
+        <div class="admin-area" style="">
            @yield("content")
         </div>
 

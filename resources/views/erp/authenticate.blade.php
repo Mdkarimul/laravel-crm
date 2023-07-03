@@ -19,7 +19,8 @@ WAP ERP SOLUTION
 @endsection
 
 @section("content")
-<!--admin not registered-->
+
+<!--show this portion if admin  not registered-->
 {{session()->get("mac_authentication")}}
 @if(session()->get("mac_authentication") =="notRegistered")
 <div class="page py-4">
@@ -106,7 +107,7 @@ WAP ERP SOLUTION
     </div>
    @endif
 
- <!--admin have-->
+ <!--admin  have-->
    @if(session()->get("mac_authentication") =="admin")
 <div class="page py-4">
         <div class="branding">
@@ -183,6 +184,8 @@ WAP ERP SOLUTION
     </div>
     </div>
    @endif
+
+
 
    <!--employ coding-->
    @if(session()->get("mac_authentication") =="employee")
